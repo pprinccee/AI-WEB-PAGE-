@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import ParticleBackground from '@/components/ParticleBackground';
@@ -5,7 +6,8 @@ import MagicOrb from '@/components/MagicOrb';
 import FeatureCard from '@/components/FeatureCard';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
 import { Button } from '@/components/ui/button';
-import { Calendar, TicketCheck, BarChart3 } from 'lucide-react';
+import { Calendar, Users, BarChart3 } from 'lucide-react';
+
 const Index = () => {
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +25,7 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
   return <div className="min-h-screen bg-[#050A1C] overflow-x-hidden">
       <Navbar />
       <ParticleBackground />
@@ -59,9 +62,9 @@ const Index = () => {
               animationDelay: '0.4s'
             }}>
                 <div className="w-12 h-12 md:w-16 md:h-16 mx-auto bg-purple-500/20 rounded-lg flex items-center justify-center mb-2">
-                  <TicketCheck className="w-6 h-6 md:w-8 md:h-8 text-purple-400" />
+                  <Users className="w-6 h-6 md:w-8 md:h-8 text-purple-400" />
                 </div>
-                <p className="text-white text-sm md:text-base font-medium">ROLE BASED </p>
+                <p className="text-white text-sm md:text-base font-medium">Role Based Dashboard</p>
               </div>
               
               <div className="glass-card rounded-lg p-4 text-center animate-float" style={{
@@ -92,7 +95,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-section opacity-0">
             <FeatureCard title="Event Planning" description="Easily create, schedule, and manage multiple events with our intuitive calendar interface. Set reminders and track event milestones." icon={<Calendar className="w-8 h-8 text-white" />} color="bg-blue-500/20" />
             
-            <FeatureCard title="Ticketing System" description="Sell and manage tickets seamlessly. Generate QR codes, track sales, and handle check-ins all in one place." icon={<TicketCheck className="w-8 h-8 text-white" />} color="bg-purple-500/20" />
+            <FeatureCard title="Role-Based Dashboard" description="Customize access for organizers, club admins, and attendees. Each role has its own tailored dashboard with relevant tools and information." icon={<Users className="w-8 h-8 text-white" />} color="bg-purple-500/20" />
             
             <FeatureCard title="Real-time Analytics" description="Gain insights into attendance patterns, ticket sales, and engagement metrics to optimize your future events." icon={<BarChart3 className="w-8 h-8 text-white" />} color="bg-pink-500/20" />
           </div>
@@ -177,7 +180,7 @@ const Index = () => {
               <h4 className="text-lg font-semibold text-white mb-4">Features</h4>
               <ul className="space-y-2">
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Event Planning</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Ticketing System</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Role-Based Dashboard</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Analytics</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Promotion Tools</a></li>
               </ul>
@@ -209,4 +212,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
