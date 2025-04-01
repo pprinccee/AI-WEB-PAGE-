@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import ParticleBackground from '@/components/ParticleBackground';
@@ -7,31 +6,24 @@ import FeatureCard from '@/components/FeatureCard';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
 import { Button } from '@/components/ui/button';
 import { Calendar, TicketCheck, BarChart3 } from 'lucide-react';
-
 const Index = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const scrollSections = document.querySelectorAll('.scroll-section');
-      
-      scrollSections.forEach((section) => {
+      scrollSections.forEach(section => {
         const sectionElement = section as HTMLElement;
         const sectionTop = sectionElement.offsetTop;
         const sectionHeight = sectionElement.offsetHeight;
-        
-        if (scrollPosition > sectionTop - window.innerHeight / 1.5 && 
-            scrollPosition < sectionTop + sectionHeight) {
+        if (scrollPosition > sectionTop - window.innerHeight / 1.5 && scrollPosition < sectionTop + sectionHeight) {
           section.classList.add('animate-slide-right');
         }
       });
     };
-    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  return (
-    <div className="min-h-screen bg-[#050A1C] overflow-x-hidden">
+  return <div className="min-h-screen bg-[#050A1C] overflow-x-hidden">
       <Navbar />
       <ParticleBackground />
       
@@ -54,21 +46,27 @@ const Index = () => {
             <MagicOrb />
             
             <div className="grid grid-cols-3 gap-4 md:gap-8 mt-12 max-w-3xl mx-auto">
-              <div className="glass-card rounded-lg p-4 text-center animate-float" style={{ animationDelay: '0.2s' }}>
+              <div className="glass-card rounded-lg p-4 text-center animate-float" style={{
+              animationDelay: '0.2s'
+            }}>
                 <div className="w-12 h-12 md:w-16 md:h-16 mx-auto bg-blue-500/20 rounded-lg flex items-center justify-center mb-2">
                   <Calendar className="w-6 h-6 md:w-8 md:h-8 text-blue-400" />
                 </div>
                 <p className="text-white text-sm md:text-base font-medium">Event Planner</p>
               </div>
               
-              <div className="glass-card rounded-lg p-4 text-center animate-float" style={{ animationDelay: '0.4s' }}>
+              <div className="glass-card rounded-lg p-4 text-center animate-float" style={{
+              animationDelay: '0.4s'
+            }}>
                 <div className="w-12 h-12 md:w-16 md:h-16 mx-auto bg-purple-500/20 rounded-lg flex items-center justify-center mb-2">
                   <TicketCheck className="w-6 h-6 md:w-8 md:h-8 text-purple-400" />
                 </div>
-                <p className="text-white text-sm md:text-base font-medium">Ticketing</p>
+                <p className="text-white text-sm md:text-base font-medium">ROLE BASED </p>
               </div>
               
-              <div className="glass-card rounded-lg p-4 text-center animate-float" style={{ animationDelay: '0.6s' }}>
+              <div className="glass-card rounded-lg p-4 text-center animate-float" style={{
+              animationDelay: '0.6s'
+            }}>
                 <div className="w-12 h-12 md:w-16 md:h-16 mx-auto bg-pink-500/20 rounded-lg flex items-center justify-center mb-2">
                   <BarChart3 className="w-6 h-6 md:w-8 md:h-8 text-pink-400" />
                 </div>
@@ -92,26 +90,11 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-section opacity-0">
-            <FeatureCard 
-              title="Event Planning" 
-              description="Easily create, schedule, and manage multiple events with our intuitive calendar interface. Set reminders and track event milestones."
-              icon={<Calendar className="w-8 h-8 text-white" />}
-              color="bg-blue-500/20"
-            />
+            <FeatureCard title="Event Planning" description="Easily create, schedule, and manage multiple events with our intuitive calendar interface. Set reminders and track event milestones." icon={<Calendar className="w-8 h-8 text-white" />} color="bg-blue-500/20" />
             
-            <FeatureCard 
-              title="Ticketing System" 
-              description="Sell and manage tickets seamlessly. Generate QR codes, track sales, and handle check-ins all in one place."
-              icon={<TicketCheck className="w-8 h-8 text-white" />}
-              color="bg-purple-500/20"
-            />
+            <FeatureCard title="Ticketing System" description="Sell and manage tickets seamlessly. Generate QR codes, track sales, and handle check-ins all in one place." icon={<TicketCheck className="w-8 h-8 text-white" />} color="bg-purple-500/20" />
             
-            <FeatureCard 
-              title="Real-time Analytics" 
-              description="Gain insights into attendance patterns, ticket sales, and engagement metrics to optimize your future events."
-              icon={<BarChart3 className="w-8 h-8 text-white" />}
-              color="bg-pink-500/20"
-            />
+            <FeatureCard title="Real-time Analytics" description="Gain insights into attendance patterns, ticket sales, and engagement metrics to optimize your future events." icon={<BarChart3 className="w-8 h-8 text-white" />} color="bg-pink-500/20" />
           </div>
         </div>
       </section>
@@ -224,8 +207,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
